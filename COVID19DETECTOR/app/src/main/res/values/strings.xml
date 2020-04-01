@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">COVID19-DETECTOR</string>
+    <string name="facebook_app_id">568527887092382</string>
+    <string name="fb_login_protocol_scheme">fb568527887092382</string>
 </resources>

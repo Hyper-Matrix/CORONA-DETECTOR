@@ -139,26 +139,45 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/btnfb"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/btnfb1"
+                    android:layout_width="70dp"
                     android:layout_height="40dp"
                     android:layout_below="@id/btnlogin"
                     android:layout_centerHorizontal="true"
                     android:layout_margin="20dp"
                     android:layout_marginTop="20dp"
                     android:layout_weight="1"
+                    android:background="@drawable/facebookbutton"
+                    android:drawableLeft="@drawable/com_facebook_favicon_blue"
+                    android:padding="10dp"
+                    android:text="Facebook"
+                    android:textAllCaps="false"
+                    android:textColor="#2B2B2B"
+                    android:textSize="16sp" />
 
-                    android:background="@drawable/socialmedia"
+                <com.facebook.login.widget.LoginButton
+                    android:id="@+id/btnfb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/btnlogin"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+
+                    android:background="@drawable/et_bg"
                     android:drawableLeft="@drawable/fb"
                     android:paddingLeft="10dp"
                     android:text="Facebook"
                     android:textAllCaps="false"
                     android:textColor="#311B92"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:visibility="gone" />
+
 
                 <Button
                     android:id="@+id/btngoogle"
-                    android:layout_width="wrap_content"
+                    android:layout_width="70dp"
                     android:layout_height="40dp"
                     android:layout_below="@id/btnlogin"
                     android:layout_centerHorizontal="true"
