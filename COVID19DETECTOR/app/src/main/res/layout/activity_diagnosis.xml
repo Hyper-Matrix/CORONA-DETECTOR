@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".diagnosis"
+    android:background="@drawable/background1">
+    <TextView
+        android:id="@+id/tvwelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello there! Welcome to COVID-19 detector. I would like to ask you some questions before assessing your risk level. Let's begin"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:fontFamily="sans-serif-medium"
+        android:padding="20dp"/>
+<RelativeLayout
+    android:id="@+id/r1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/tvwelcome"
+    >
+    <TextView
+        android:id="@+id/tvcough"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Do You have cough?"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:fontFamily="sans-serif-medium"
+        android:padding="10dp"
+        android:gravity="center"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_below="@+id/tvcough">
+
+        <Button
+            android:id="@+id/btnyes"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+
+            android:layout_centerHorizontal="true"
+            android:layout_margin="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_bg"
+            android:padding="5dp"
+            android:text="YES"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+        <Button
+            android:id="@+id/btnno"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+
+            android:layout_centerHorizontal="true"
+            android:layout_margin="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_bg"
+
+            android:padding="5dp"
+            android:text="NO"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/r2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/r1"
+        >
+        <TextView
+            android:id="@+id/tvcold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Do You have cold??"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:fontFamily="sans-serif-medium"
+            android:padding="10dp"
+            android:gravity="center"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_below="@+id/tvcold">
+
+            <Button
+                android:id="@+id/btnyes1"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+
+                android:layout_centerHorizontal="true"
+                android:layout_margin="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_bg"
+                android:padding="5dp"
+                android:text="YES"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+            <Button
+                android:id="@+id/btnno1"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+
+                android:layout_centerHorizontal="true"
+                android:layout_margin="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_bg"
+
+                android:padding="5dp"
+                android:text="NO"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -13,6 +13,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.facebook.AccessToken;
@@ -46,12 +47,13 @@ private static int time = 2000;
     private static final String TAG = "simplifiedcoding";
     GoogleSignInClient mGoogleSignInClient;
     FirebaseAuth mAuth;
-    Button btngoogle,btnfb1;
+    Button btngoogle,btnfb1,btnlogin;
     LoginButton loginbutton;
     private CallbackManager mCallbackManager;
 
     RelativeLayout rellayout,rellayout2;
-    EditText etpass,etusername;
+    EditText etpassword,etusername;
+    TextView tvregister;
     Handler handler = new Handler();
 
 
@@ -69,14 +71,51 @@ private static int time = 2000;
                 .requestEmail()
                 .build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-        EditText etusername = findViewById(R.id.etusername);
-        EditText etpass = findViewById(R.id.etpass);
+        final EditText etusername = findViewById(R.id.etusername);
+        final EditText etpassword = findViewById(R.id.etpassword);
         Button btnfb1 = findViewById(R.id.btnfb1);
         Button btngoogle  = findViewById(R.id.btngoogle);
+        Button btnlogin = findViewById(R.id.btnlogin);
+        TextView tvregister = findViewById(R.id.tvregister);
         btngoogle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 signIn();
+            }
+        });
+        tvregister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(splashscreen.this, register.class));
+            }
+        });
+        btnlogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final FirebaseAuth mAuth = FirebaseAuth.getInstance();
+                String email = etusername.getText().toString().trim();
+                String password = etpassword.getText().toString().trim();
+                mAuth.signInWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(splashscreen.this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    // Sign in success, update UI with the signed-in user's information
+                                    Log.d(TAG, "signInWithEmail:success");
+                                    FirebaseUser user = mAuth.getCurrentUser();
+                                    startActivity(new Intent(splashscreen.this , MainActivity.class));
+
+                                } else {
+                                    // If sign in fails, display a message to the user.
+                                    Log.w(TAG, "signInWithEmail:failure", task.getException());
+                                    Toast.makeText(splashscreen.this, "Authentication failed.",
+                                            Toast.LENGTH_SHORT).show();
+
+                                }
+
+                                // ...
+                            }
+                        });
             }
         });
 
